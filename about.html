@@ -78,7 +78,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Is Spotless really family-owned?","acceptedAnswer":{"@type":"Answer","text":"Yes. Jack and Justice Graham own and operate Spotless out of Surprise, AZ. There are no franchise agreements, corporate parents, or outside investors."}},
+    {"@type":"Question","name":"Is Spotless really family-owned?","acceptedAnswer":{"@type":"Answer","text":"Yes. Jack Graham and his wife own and operate Spotless out of Surprise, AZ. There are no franchise agreements, corporate parents, or outside investors."}},
     {"@type":"Question","name":"How long has Spotless been in business?","acceptedAnswer":{"@type":"Answer","text":"Spotless was founded in 2026. The company is new, but the standard isn't — every cleaner on the crew is individually vetted and experienced."}},
     {"@type":"Question","name":"Where is Spotless based?","acceptedAnswer":{"@type":"Answer","text":"Surprise, AZ. We service Surprise and nine other West Valley cities: Peoria, Goodyear, Litchfield Park, Glendale, Buckeye, Verrado, Avondale, Waddell, and El Mirage."}},
     {"@type":"Question","name":"Do you bring your own supplies and equipment?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every visit. If you'd prefer we use specific products you keep at home, let us know when you book."}},
@@ -98,8 +98,35 @@
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-      <a href="/services/">Services</a>
-      <a href="/service-areas/">Service Areas</a>
+      <div class="nav-item has-dropdown">
+        <a href="/services/">Services</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/services/residential-cleaning.html">Residential Cleaning</a>
+          <a href="/services/deep-cleaning.html">Deep Cleaning</a>
+          <a href="/services/move-in-move-out-cleaning.html">Move-In / Move-Out</a>
+          <a href="/services/short-term-rental-cleaning.html">Short-Term Rental</a>
+          <a href="/services/recurring-residential-cleaning.html">Recurring Residential</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="/services/" class="nav-dropdown-all">View all services</a>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <a href="/service-areas/">Service Areas</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/service-areas/surprise.html">Surprise</a>
+          <a href="/service-areas/peoria.html">Peoria</a>
+          <a href="/service-areas/goodyear.html">Goodyear</a>
+          <a href="/service-areas/litchfield-park.html">Litchfield Park</a>
+          <a href="/service-areas/glendale.html">Glendale</a>
+          <a href="/service-areas/buckeye.html">Buckeye</a>
+          <a href="/service-areas/verrado.html">Verrado</a>
+          <a href="/service-areas/avondale.html">Avondale</a>
+          <a href="/service-areas/waddell.html">Waddell</a>
+          <a href="/service-areas/el-mirage.html">El Mirage</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="/service-areas/" class="nav-dropdown-all">View all areas</a>
+        </div>
+      </div>
       <a href="/about.html" aria-current="page">About</a>
       <a href="/blog/">Blog</a>
       <a href="/contact.html">Contact</a>
@@ -130,9 +157,16 @@
         <p>Spotless was started to be the opposite of that. A cleaning company where the price is the price. Where the same vetted crew shows up every recurring visit. Where the work is done the way you'd want it done in your own home — because the people doing it treat your home like one.</p>
         <p><strong>That's it. That's the whole reason.</strong></p>
 
-        <h2>Meet Jack</h2>
-        <p>Jack grew up in Riverside, California, and came to Arizona to play college athletics at Ottawa University in Surprise. After college he stayed — coaching college football, building a digital marketing company, and eventually putting down roots with his wife Justice and their two daughters, Joy and Juliana (the family calls her JuJu).</p>
-        <p>He brings a coach's standards to Spotless: show up on time, do the work right, hold the crew accountable, and don't make excuses. Football culture isn't a metaphor for him — it's how he runs the business.</p>
+        <div class="portrait-card">
+          <div class="portrait-card-mark">
+            <img src="/images/dash-mascot-transparent.png" alt="" aria-hidden="true">
+          </div>
+          <div class="portrait-card-body">
+            <h2>Meet Jack</h2>
+            <p>Jack grew up in Riverside, California, and came to Arizona to play college athletics at Ottawa University in Surprise. After college he stayed — coaching college football, building a digital marketing company, and eventually putting down roots with his wife and their two daughters.</p>
+            <p>He brings a coach's standards to Spotless: show up on time, do the work right, hold the crew accountable, and don't make excuses. Football culture isn't a metaphor for him — it's how he runs the business.</p>
+          </div>
+        </div>
 
         <p>Three things he won't compromise on:</p>
         <blockquote>
@@ -146,7 +180,7 @@
         </blockquote>
 
         <h2>A family-run operation</h2>
-        <p>Jack runs Spotless with his wife Justice. The two of them set the standard. The cleaners on the crew are local, individually vetted, individually insured, and trained to the same standard Jack would apply in his own home.</p>
+        <p>Jack runs Spotless with his wife. The two of them set the standard. The cleaners on the crew are local, individually vetted, individually insured, and trained to the same standard Jack would apply in his own home.</p>
         <p>The team is small on purpose. Spotless isn't trying to be the biggest cleaning company in the West Valley — it's trying to be the one you'd actually recommend to your in-laws.</p>
       </div>
     </div>
@@ -154,7 +188,7 @@
 
   <section class="section" style="background:var(--color-cream-warm); padding-top:var(--space-7); padding-bottom:var(--space-7)">
     <div class="container">
-      <p class="section-eyebrow">What you can verify</p>
+      <p class="section-eyebrow has-dot">What you can verify</p>
       <h2 class="section-heading">The Spotless standard</h2>
 
       <div class="promise-grid">
@@ -188,13 +222,13 @@
 
   <section class="section">
     <div class="container">
-      <p class="section-eyebrow">Questions about the company</p>
+      <p class="section-eyebrow has-dot">Questions about the company</p>
       <h2 class="section-heading">Frequently asked</h2>
 
       <div class="faq-list">
         <details class="faq-item">
           <summary>Is Spotless really family-owned?</summary>
-          <p>Yes. Jack and Justice Graham own and operate Spotless out of Surprise, AZ. There are no franchise agreements, corporate parents, or outside investors.</p>
+          <p>Yes. Jack Graham and his wife own and operate Spotless out of Surprise, AZ. There are no franchise agreements, corporate parents, or outside investors.</p>
         </details>
         <details class="faq-item">
           <summary>How long has Spotless been in business?</summary>
@@ -217,6 +251,9 @@
   </section>
 
   <section class="final-cta">
+    <div class="final-cta-mark">
+      <img src="/images/dash-mascot-transparent.png" alt="" aria-hidden="true">
+    </div>
     <h2>Ready to get started?</h2>
     <p>Get an honest price in two minutes. Book in five.</p>
     <div class="final-cta-actions">
@@ -231,7 +268,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/images/logo-full-transparent.png" alt="Spotless House Cleaning">
+        <img src="/images/logo-full.png" alt="Spotless House Cleaning">
         <p>Family-owned house cleaning in Surprise, AZ. Serving the West Valley with transparent pricing and the same trusted crew, every visit.</p>
       </div>
       <div class="footer-col">

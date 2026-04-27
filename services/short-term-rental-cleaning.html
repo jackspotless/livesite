@@ -193,8 +193,35 @@
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-      <a href="/services/" aria-current="page">Services</a>
-      <a href="/service-areas/">Service Areas</a>
+      <div class="nav-item has-dropdown">
+        <a href="/services/">Services</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/services/residential-cleaning.html">Residential Cleaning</a>
+          <a href="/services/deep-cleaning.html">Deep Cleaning</a>
+          <a href="/services/move-in-move-out-cleaning.html">Move-In / Move-Out</a>
+          <a href="/services/short-term-rental-cleaning.html" aria-current="page">Short-Term Rental</a>
+          <a href="/services/recurring-residential-cleaning.html">Recurring Residential</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="/services/" class="nav-dropdown-all">View all services</a>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <a href="/service-areas/">Service Areas</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/service-areas/surprise.html">Surprise</a>
+          <a href="/service-areas/peoria.html">Peoria</a>
+          <a href="/service-areas/goodyear.html">Goodyear</a>
+          <a href="/service-areas/litchfield-park.html">Litchfield Park</a>
+          <a href="/service-areas/glendale.html">Glendale</a>
+          <a href="/service-areas/buckeye.html">Buckeye</a>
+          <a href="/service-areas/verrado.html">Verrado</a>
+          <a href="/service-areas/avondale.html">Avondale</a>
+          <a href="/service-areas/waddell.html">Waddell</a>
+          <a href="/service-areas/el-mirage.html">El Mirage</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="/service-areas/" class="nav-dropdown-all">View all areas</a>
+        </div>
+      </div>
       <a href="/about.html">About</a>
       <a href="/blog/">Blog</a>
       <a href="/contact.html">Contact</a>
@@ -205,13 +232,18 @@
 
 <main id="main">
 
-  <section class="page-header">
+  <section class="page-header has-seal">
     <div class="container">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="page-header-text">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>Short-Term Rental Cleaning
       </nav>
       <h1>Short-Term Rental &amp; Airbnb Cleaning in the West Valley</h1>
       <p class="lede">Turnover cleaning for Airbnbs and vacation rentals across the West Valley. Reliable scheduling, restock checks, and the kind of finish your guests will mention in their review.</p>
+      </div>
+      <div class="page-header-seal">
+        <img src="/images/dash-mascot-transparent.png" alt="" aria-hidden="true">
+      </div>
     </div>
   </section>
 
@@ -316,7 +348,7 @@
 
   <section class="section">
     <div class="container">
-      <p class="section-eyebrow">Questions about short-term rental cleaning</p>
+      <p class="section-eyebrow has-dot">Questions about short-term rental cleaning</p>
       <h2 class="section-heading">Frequently asked</h2>
 
       <div class="faq-list">
@@ -353,6 +385,9 @@
   </section>
 
   <section class="final-cta">
+    <div class="final-cta-mark">
+      <img src="/images/dash-mascot-transparent.png" alt="" aria-hidden="true">
+    </div>
     <h2>Reliable turnovers. Five-star reviews.</h2>
     <p>See your exact price in two minutes. Book in five.</p>
     <div class="final-cta-actions">
@@ -367,7 +402,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/images/logo-full-transparent.png" alt="Spotless House Cleaning">
+        <img src="/images/logo-full.png" alt="Spotless House Cleaning">
         <p>Family-owned house cleaning in Surprise, AZ. Serving the West Valley with transparent pricing and the same trusted crew, every visit.</p>
       </div>
       <div class="footer-col">

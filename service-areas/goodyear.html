@@ -163,8 +163,35 @@
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary">
-      <a href="/services/">Services</a>
-      <a href="/service-areas/" aria-current="page">Service Areas</a>
+      <div class="nav-item has-dropdown">
+        <a href="/services/">Services</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/services/residential-cleaning.html">Residential Cleaning</a>
+          <a href="/services/deep-cleaning.html">Deep Cleaning</a>
+          <a href="/services/move-in-move-out-cleaning.html">Move-In / Move-Out</a>
+          <a href="/services/short-term-rental-cleaning.html">Short-Term Rental</a>
+          <a href="/services/recurring-residential-cleaning.html">Recurring Residential</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="/services/" class="nav-dropdown-all">View all services</a>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <a href="/service-areas/">Service Areas</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/service-areas/surprise.html">Surprise</a>
+          <a href="/service-areas/peoria.html">Peoria</a>
+          <a href="/service-areas/goodyear.html" aria-current="page">Goodyear</a>
+          <a href="/service-areas/litchfield-park.html">Litchfield Park</a>
+          <a href="/service-areas/glendale.html">Glendale</a>
+          <a href="/service-areas/buckeye.html">Buckeye</a>
+          <a href="/service-areas/verrado.html">Verrado</a>
+          <a href="/service-areas/avondale.html">Avondale</a>
+          <a href="/service-areas/waddell.html">Waddell</a>
+          <a href="/service-areas/el-mirage.html">El Mirage</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="/service-areas/" class="nav-dropdown-all">View all areas</a>
+        </div>
+      </div>
       <a href="/about.html">About</a>
       <a href="/blog/">Blog</a>
       <a href="/contact.html">Contact</a>
@@ -175,13 +202,18 @@
 
 <main id="main">
 
-  <section class="page-header">
+  <section class="page-header has-seal">
     <div class="container">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="page-header-text">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="/">Home</a><span>/</span><a href="/service-areas/">Service Areas</a><span>/</span>Goodyear
       </nav>
       <h1>House Cleaning in Goodyear, AZ</h1>
       <p class="lede">Goodyear has grown fast — and the housing stock reflects it. From PebbleCreek's established 55+ community to the newer Estrella developments south of the I-10, we clean across the city.</p>
+      </div>
+      <div class="page-header-seal">
+        <img src="/images/dash-mascot-transparent.png" alt="" aria-hidden="true">
+      </div>
     </div>
   </section>
 
@@ -248,7 +280,7 @@
 
   <section class="section">
     <div class="container">
-      <p class="section-eyebrow">Goodyear, AZ — questions</p>
+      <p class="section-eyebrow has-dot">Goodyear, AZ — questions</p>
       <h2 class="section-heading">Frequently asked</h2>
 
       <div class="faq-list">
@@ -277,6 +309,9 @@
   </section>
 
   <section class="final-cta">
+    <div class="final-cta-mark">
+      <img src="/images/dash-mascot-transparent.png" alt="" aria-hidden="true">
+    </div>
     <h2>House cleaning in Goodyear, done right.</h2>
     <p>Get your exact price in two minutes. Book in five.</p>
     <div class="final-cta-actions">
@@ -291,7 +326,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="/images/logo-full-transparent.png" alt="Spotless House Cleaning">
+        <img src="/images/logo-full.png" alt="Spotless House Cleaning">
         <p>Family-owned house cleaning in Surprise, AZ. Serving the West Valley with transparent pricing and the same trusted crew, every visit.</p>
       </div>
       <div class="footer-col">

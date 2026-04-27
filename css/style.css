@@ -146,6 +146,116 @@ ul, ol { padding-left: 1.25rem; }
 }
 .nav-cta:hover { background: var(--color-indigo-soft); color: var(--color-cream) !important; }
 
+/* ---------- Dropdown nav items ---------- */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.nav-item.has-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+.nav-item.has-dropdown > a::after {
+  content: "";
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 200ms var(--ease);
+  opacity: 0.7;
+}
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 240px;
+  background: var(--color-cream);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 36px -12px rgba(45, 41, 78, 0.18);
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease), visibility 180ms;
+  z-index: 60;
+}
+.nav-item.has-dropdown:hover > .nav-dropdown,
+.nav-item.has-dropdown:focus-within > .nav-dropdown,
+.nav-item.has-dropdown.is-open > .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-item.has-dropdown:hover > a::after,
+.nav-item.has-dropdown:focus-within > a::after,
+.nav-item.has-dropdown.is-open > a::after {
+  transform: rotate(225deg) translate(-2px, -2px);
+  opacity: 1;
+}
+/* Invisible bridge so cursor can move from trigger to dropdown without losing hover */
+.nav-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+.nav-dropdown a {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 3px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-indigo);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 140ms var(--ease), color 140ms var(--ease);
+}
+.nav-dropdown a:hover,
+.nav-dropdown a:focus-visible {
+  background: var(--color-lavender-pale);
+  color: var(--color-indigo);
+}
+.nav-dropdown a[aria-current="page"] {
+  background: var(--color-lavender-pale);
+  color: var(--color-indigo);
+}
+/* When a dropdown contains aria-current, also indicate the parent trigger is active.
+   Uses :has() — supported in all modern evergreen browsers. */
+.nav-item.has-dropdown:has(a[aria-current="page"]) > a,
+.primary-nav > a[aria-current="page"] {
+  color: var(--color-lavender);
+}
+.nav-dropdown-divider {
+  height: 1px;
+  background: var(--color-rule);
+  margin: var(--space-1) 0;
+}
+.nav-dropdown-all {
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  color: var(--color-lavender) !important;
+  padding-top: var(--space-2) !important;
+}
+.nav-dropdown-all::after {
+  content: " →";
+  transition: transform 160ms var(--ease);
+  display: inline-block;
+}
+.nav-dropdown-all:hover::after { transform: translateX(3px); }
+
 /* Mobile nav */
 .nav-toggle {
   display: none;
@@ -162,7 +272,7 @@ ul, ol { padding-left: 1.25rem; }
   .primary-nav.is-open {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     position: absolute;
     top: 100%;
     left: 0;
@@ -170,9 +280,58 @@ ul, ol { padding-left: 1.25rem; }
     background: var(--color-cream);
     border-bottom: 1px solid var(--color-rule);
     padding: var(--space-4);
-    gap: var(--space-3);
+    gap: var(--space-2);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
   }
   .nav-toggle { display: inline-block; }
+
+  /* Mobile dropdown — accordion style */
+  .nav-item {
+    display: block;
+    width: 100%;
+  }
+  .nav-item > a {
+    display: block;
+    padding: var(--space-2) 0;
+  }
+  .nav-item.has-dropdown {
+    border-bottom: 1px solid var(--color-rule);
+    padding-bottom: var(--space-2);
+  }
+  .nav-item.has-dropdown > a::after {
+    margin-left: auto;
+    float: right;
+    margin-top: 0.5em;
+  }
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    box-shadow: none;
+    border: 0;
+    background: transparent;
+    padding: var(--space-1) 0 var(--space-2) var(--space-3);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 240ms var(--ease);
+  }
+  .nav-item.has-dropdown.is-open > .nav-dropdown {
+    max-height: 600px;
+    transform: none;
+  }
+  .nav-dropdown::before { display: none; }
+  .nav-dropdown a { padding: var(--space-1) var(--space-2); }
+  .primary-nav > a:not(.nav-cta) {
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .primary-nav .nav-cta {
+    margin-top: var(--space-3);
+    text-align: center;
+  }
 }
 
 /* ---------- Hero ---------- */
@@ -619,12 +778,106 @@ ul, ol { padding-left: 1.25rem; }
   margin: 0;
 }
 
+/* Branded page-header variant — text + Dash seal in a side column */
+.page-header.has-seal {
+  position: relative;
+}
+.page-header.has-seal .container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-5);
+  align-items: center;
+}
+.page-header-seal {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+.page-header-seal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 860px) {
+  .page-header.has-seal .container { grid-template-columns: 1fr; }
+  .page-header-seal {
+    width: 120px;
+    height: 120px;
+    margin: 0 0 var(--space-3);
+    order: -1;
+  }
+}
+
+/* About-page "Meet Jack" portrait card */
+.portrait-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--space-5);
+  align-items: start;
+  margin: var(--space-5) 0 var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-cream-warm);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--color-lavender);
+}
+.portrait-card-mark {
+  width: 180px;
+  height: 180px;
+}
+.portrait-card-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.portrait-card-body h2 {
+  margin-top: 0;
+}
+@media (max-width: 720px) {
+  .portrait-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+  .portrait-card-mark {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+  }
+}
+
+/* Eyebrow with dot accent */
+.section-eyebrow.has-dot::before,
+.hero-eyebrow.has-dot::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-lavender);
+  margin-right: 0.6em;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
 /* ---------- Final CTA ---------- */
 .final-cta {
   background: var(--color-cream-warm);
   text-align: center;
   padding: var(--space-8) var(--space-4);
   border-top: 1px solid var(--color-rule);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta-mark {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto var(--space-4);
+}
+.final-cta-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .final-cta h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
@@ -668,7 +921,13 @@ ul, ol { padding-left: 1.25rem; }
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
-.footer-brand img { height: 56px; width: auto; margin-bottom: var(--space-3); }
+.footer-brand img {
+  height: 72px;
+  width: auto;
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius);
+  display: block;
+}
 .footer-brand p {
   color: rgba(250, 249, 246, 0.75);
   max-width: 32ch;
