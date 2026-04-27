@@ -166,6 +166,18 @@ A few things will need updating after launch:
 
 ---
 
+## Analytics & Search Console
+
+**Google Analytics 4** is installed on every page using the gtag.js snippet (Measurement ID `G-1NSKQJZ5V5`). The snippet sits in `<head>` and loads asynchronously, so it doesn't block page render. Data flows to Jack's GA4 property automatically.
+
+**Google Search Console** should be verified on Jack's Google account. The recommended verification method is "Google Analytics" — since GA4 is already installed, GSC will detect it automatically and verify ownership in one click. Alternatively, GSC supports HTML meta tag, DNS TXT record, or HTML file upload as fallback methods.
+
+After GSC is verified, submit `sitemap.xml` so Google starts crawling all 24 URLs.
+
+Both tools are owned by Jack on his Google account. Baseline is added as a user with appropriate permissions (Editor for GA4, Restricted for GSC) — never as the primary account holder.
+
+---
+
 ## Built by Baseline SEO
 
 Every page footer includes a small "Created by Baseline SEO" attribution linking to baseline-seo.com. This is standard on all Baseline builds.
