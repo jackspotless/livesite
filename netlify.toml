@@ -1,8 +1,23 @@
 # Netlify configuration for Spotless House Cleaning
-# Static site deploy with form handling and clean URLs
+# Static site deploy with form handling and pretty URLs
 
 [build]
   publish = "."
+
+# ---------- Pretty URLs ----------
+# Force-redirect any legacy .html URL to its extensionless canonical version.
+# This handles bookmarks, old sitemap entries, and any external links pointing
+# at the .html versions — they all 301 to the canonical extensionless URL.
+# The catch-all rule covers every page in one entry.
+
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+  force = true
+
+# ---------- Hub page trailing slashes ----------
+# Directory index pages should canonicalize to the trailing-slash version.
 
 [[redirects]]
   from = "/services"
@@ -19,11 +34,7 @@
   to = "/blog/"
   status = 301
 
-# Catch-all 404
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
+# ---------- Headers ----------
 
 [[headers]]
   for = "/*"

@@ -6,17 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/about.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/contact.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/booking.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/booking</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -26,7 +26,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/blog/deep-cleaning-vs-standard-cleaning-surprise-az.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/blog/deep-cleaning-vs-standard-cleaning-surprise-az</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -38,27 +38,27 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/services/residential-cleaning.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/services/residential-cleaning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/services/deep-cleaning.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/services/deep-cleaning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/services/move-in-move-out-cleaning.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/services/move-in-move-out-cleaning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/services/short-term-rental-cleaning.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/services/short-term-rental-cleaning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/services/recurring-residential-cleaning.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/services/recurring-residential-cleaning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -70,64 +70,64 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/surprise.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/surprise</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/peoria.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/peoria</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/goodyear.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/goodyear</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/litchfield-park.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/litchfield-park</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/glendale.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/glendale</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/buckeye.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/buckeye</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/verrado.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/verrado</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/avondale.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/avondale</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/waddell.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/waddell</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/service-areas/el-mirage.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/el-mirage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Legal -->
   <url>
-    <loc>https://spotlesshousecleaningaz.com/privacy.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://spotlesshousecleaningaz.com/terms.html</loc>
+    <loc>https://spotlesshousecleaningaz.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
