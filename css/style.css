@@ -1180,3 +1180,249 @@ ul, ol { padding-left: 1.25rem; }
   overflow: hidden; clip: rect(0,0,0,0);
   white-space: nowrap; border: 0;
 }
+
+
+/* ============================================================================
+   SPOTLESS PHOTO COMPONENTS
+   Append to css/style.css. Bump the ?v= cache-bust param after deploy.
+
+   Built against existing Spotless brand tokens:
+   - --color-indigo: #2D294E
+   - --color-lavender: #B19CD9
+   - --color-cream: #FAF9F6
+   - --space-* and --radius from existing root scope
+
+   All components use lazy-loading <img> and <picture> with WebP + JPEG fallback.
+   ============================================================================ */
+
+/* -------- Single inline photo (used in About, in Contact, mid-prose) -------- */
+
+.spotless-photo {
+  display: block;
+  margin: var(--space-5) 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 24px -10px rgba(45, 41, 78, 0.18);
+}
+
+.spotless-photo img,
+.spotless-photo picture,
+.spotless-photo picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.spotless-photo-caption {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 0.8125rem;
+  color: rgba(45, 41, 78, 0.6);
+  font-style: italic;
+}
+
+
+/* -------- Photo gallery (service pages, blog posts) ------------------------ */
+
+.spotless-gallery {
+  margin: var(--space-6) 0;
+}
+
+.spotless-gallery-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-lavender);
+  margin-bottom: var(--space-3);
+}
+
+.spotless-gallery-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--color-lavender);
+  border-radius: 50%;
+}
+
+.spotless-gallery-title {
+  font-family: var(--font-display, "Archivo", sans-serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-indigo);
+  margin: 0 0 var(--space-4);
+  line-height: 1.2;
+}
+
+.spotless-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.spotless-gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 24px -12px rgba(45, 41, 78, 0.2);
+  background: var(--color-cream);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.spotless-gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -10px rgba(45, 41, 78, 0.25);
+}
+
+.spotless-gallery-item picture,
+.spotless-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* Landscape photos (rare — kitchen sink) get a 4:3 override */
+.spotless-gallery-item.is-landscape picture,
+.spotless-gallery-item.is-landscape img {
+  aspect-ratio: 4 / 3;
+}
+
+.spotless-gallery-item-caption {
+  padding: var(--space-3);
+  font-size: 0.875rem;
+  color: rgba(45, 41, 78, 0.75);
+  line-height: 1.4;
+  border-top: 1px solid rgba(177, 156, 217, 0.18);
+}
+
+
+/* -------- Before/After component (ready for Batch 1 integration) ----------- */
+/* Side-by-side on desktop, stacked on mobile. No slider — for accessibility
+   and PageSpeed (per the photo policy in spotless-business-brief.md). */
+
+.spotless-beforeafter {
+  margin: var(--space-6) 0;
+}
+
+.spotless-beforeafter-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.spotless-beforeafter-side {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 24px -12px rgba(45, 41, 78, 0.2);
+}
+
+.spotless-beforeafter-side picture,
+.spotless-beforeafter-side img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.spotless-beforeafter-label {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: 4px 10px;
+  background: rgba(45, 41, 78, 0.9);
+  color: var(--color-cream);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.spotless-beforeafter-label.is-after {
+  background: var(--color-lavender);
+  color: var(--color-indigo);
+}
+
+.spotless-beforeafter-caption {
+  font-size: 0.875rem;
+  color: rgba(45, 41, 78, 0.7);
+  text-align: center;
+  margin-top: var(--space-2);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .spotless-beforeafter-pair {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+}
+
+
+/* -------- Photo strip (3 photos in a row, for booking page or homepage) ---- */
+
+.spotless-photo-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin: var(--space-6) 0;
+}
+
+.spotless-photo-strip > * {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 20px -12px rgba(45, 41, 78, 0.18);
+}
+
+.spotless-photo-strip picture,
+.spotless-photo-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .spotless-photo-strip {
+    grid-template-columns: 1fr;
+  }
+  .spotless-photo-strip picture,
+  .spotless-photo-strip img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+
+/* -------- Hero photo (homepage, large establishing shot) ------------------- */
+
+.spotless-hero-photo {
+  margin: var(--space-5) 0;
+  border-radius: calc(var(--radius) * 1.5);
+  overflow: hidden;
+  box-shadow: 0 16px 40px -16px rgba(45, 41, 78, 0.25);
+}
+
+.spotless-hero-photo picture,
+.spotless-hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .spotless-hero-photo picture,
+  .spotless-hero-photo img {
+    aspect-ratio: 4 / 3;
+  }
+}

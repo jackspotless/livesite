@@ -130,6 +130,42 @@
     <priority>0.8</priority>
   </url>
 
+    <url>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/sun-city</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/sun-city-west</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/the-grand</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/sun-city-festival</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/trilogy-at-vistancia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/vistancia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spotlesshousecleaningaz.com/service-areas/corte-bella</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Legal -->
   <url>
     <loc>https://spotlesshousecleaningaz.com/privacy</loc>
