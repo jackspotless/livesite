@@ -21,6 +21,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://spotlesshousecleaningaz.com/focus-clean</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://spotlesshousecleaningaz.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
