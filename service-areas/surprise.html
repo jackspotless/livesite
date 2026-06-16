@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/css/style.css?v=20260520">
+<link rel="stylesheet" href="/css/style.css?v=20260615">
 
 <!-- JSON-LD: LocalBusiness with city-specific geo + areaServed -->
 <script type="application/ld+json">
@@ -109,6 +109,14 @@
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
 
+<div class="announce-bar" id="announce-bar" role="region" aria-label="Featured offer">
+  <a class="announce-bar-link" href="/services/focus-clean">
+    <strong>Home of the 3-Hour Focus Clean</strong>
+    <span>Pick the rooms that matter. Flat $150. <span class="announce-bar-cta">Learn more &rarr;</span></span>
+  </a>
+  <button class="announce-bar-close" type="button" aria-label="Dismiss">&times;</button>
+</div>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="brand-mark" aria-label="Spotless House Cleaning home">
@@ -119,6 +127,7 @@
       <div class="nav-item has-dropdown">
         <a href="/services/">Services</a>
         <div class="nav-dropdown" role="menu">
+          <a href="/services/focus-clean" class="nav-dropdown-featured">3-Hour Focus Clean</a>
           <a href="/services/residential-cleaning">Residential Cleaning</a>
           <a href="/services/deep-cleaning">Deep Cleaning</a>
           <a href="/services/move-in-move-out-cleaning">Move-In / Move-Out</a>
@@ -243,6 +252,21 @@
       <p style="font-size:1.0625rem; color:var(--color-indigo-soft); max-width:60ch;">Looking for cleaning service in a specific community? We have a dedicated page for <a href="/service-areas/the-grand">The Grand at Surprise</a> with neighborhood-specific information.</p>
     </div>
   </section>
+  <!-- Focus Clean callout -->
+  <section class="section">
+    <div class="container">
+      <div class="focus-callout">
+        <div class="focus-callout-mark"><img src="/images/dash-mascot-transparent.png" alt="" aria-hidden="true"></div>
+        <div class="focus-callout-body">
+          <p class="focus-callout-eyebrow">Home of the 3-Hour Focus Clean</p>
+          <h2>Just need the rooms that matter? Book the Focus Clean.</h2>
+          <p>One cleaner, three focused hours, a flat $150 &mdash; you pick the three or four areas that need it most. No square-footage quote, no in-home estimate.</p>
+          <a href="/services/focus-clean" class="btn btn-primary">See how the Focus Clean works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="interlink-block">
     <div class="container">
       <h3>Cleaning services available in Surprise</h3>
@@ -375,6 +399,7 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
+          <li><a href="/services/focus-clean">Focus Clean</a></li>
           <li><a href="/services/residential-cleaning">Residential</a></li>
           <li><a href="/services/deep-cleaning">Deep Cleaning</a></li>
           <li><a href="/services/move-in-move-out-cleaning">Move-In / Out</a></li>
@@ -416,6 +441,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=20260520" defer></script>
+<script src="/js/main.js?v=20260615" defer></script>
 </body>
 </html>

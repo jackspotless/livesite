@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/css/style.css?v=20260520">
+<link rel="stylesheet" href="/css/style.css?v=20260615">
 
 <script type="application/ld+json">
 {
@@ -188,6 +188,14 @@
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
 
+<div class="announce-bar" id="announce-bar" role="region" aria-label="Featured offer">
+  <a class="announce-bar-link" href="/services/focus-clean">
+    <strong>Home of the 3-Hour Focus Clean</strong>
+    <span>Pick the rooms that matter. Flat $150. <span class="announce-bar-cta">Learn more &rarr;</span></span>
+  </a>
+  <button class="announce-bar-close" type="button" aria-label="Dismiss">&times;</button>
+</div>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="brand-mark" aria-label="Spotless House Cleaning home">
@@ -198,6 +206,7 @@
       <div class="nav-item has-dropdown">
         <a href="/services/">Services</a>
         <div class="nav-dropdown" role="menu">
+          <a href="/services/focus-clean" class="nav-dropdown-featured">3-Hour Focus Clean</a>
           <a href="/services/residential-cleaning">Residential Cleaning</a>
           <a href="/services/deep-cleaning" aria-current="page">Deep Cleaning</a>
           <a href="/services/move-in-move-out-cleaning">Move-In / Move-Out</a>
@@ -386,6 +395,77 @@
           </picture>
           <figcaption class="spotless-gallery-item-caption">Pantry shelves — emptied, wiped, ready to restock.</figcaption>
         </figure>
+        <figure class="spotless-gallery-item is-landscape">
+          <picture>
+            <source srcset="/images/master-bathroom-after.webp" type="image/webp">
+            <img src="/images/master-bathroom-after.jpg"
+                 alt="Spacious master bathroom with double vanity and garden tub after a deep clean"
+                 width="1280" height="960" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="spotless-gallery-item-caption">Master bath — vanities, tub, and floors detailed.</figcaption>
+        </figure>
+        <figure class="spotless-gallery-item is-landscape">
+          <picture>
+            <source srcset="/images/master-bathroom-sink-after.webp" type="image/webp">
+            <img src="/images/master-bathroom-sink-after.jpg"
+                 alt="Close detail of a clean bathroom sink and polished faucet after a deep clean"
+                 width="1280" height="960" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="spotless-gallery-item-caption">Sink detail — faucet and basin polished.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before & After -->
+  <section class="section" style="padding-top:0">
+    <div class="spotless-gallery container">
+      <span class="spotless-gallery-eyebrow">Before &amp; after</span>
+      <h2 class="spotless-gallery-title">The difference a deep clean makes</h2>
+      <div class="spotless-ba">
+        <figure data-label="Before">
+          <picture>
+            <source srcset="/images/fridge-shelf-before.webp" type="image/webp">
+            <img src="/images/fridge-shelf-before.jpg" alt="Refrigerator shelf before a deep clean, with food and spills" width="960" height="1280" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="is-after" data-label="After">
+          <picture>
+            <source srcset="/images/fridge-shelf-after.webp" type="image/webp">
+            <img src="/images/fridge-shelf-after.jpg" alt="The same refrigerator shelf emptied and wiped spotless after a deep clean" width="960" height="1280" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+      </div>
+      <p class="spotless-ba-caption">Inside the refrigerator — emptied, wiped down, and sanitized.</p>
+      <div class="spotless-ba">
+        <figure data-label="Before">
+          <picture>
+            <source srcset="/images/toilet-before.webp" type="image/webp">
+            <img src="/images/toilet-before.jpg" alt="Toilet bowl with staining and mineral buildup before a deep clean" width="960" height="1280" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <figure class="is-after" data-label="After">
+          <picture>
+            <source srcset="/images/toilet-after.webp" type="image/webp">
+            <img src="/images/toilet-after.jpg" alt="The same toilet scrubbed clean and sanitized after a deep clean" width="960" height="1280" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+      </div>
+      <p class="spotless-ba-caption">Bathrooms — scrubbed, descaled, and sanitized top to bottom.</p>
+    </div>
+  </section>
+
+  <!-- Focus Clean callout -->
+  <section class="section">
+    <div class="container">
+      <div class="focus-callout">
+        <div class="focus-callout-mark"><img src="/images/dash-mascot-transparent.png" alt="" aria-hidden="true"></div>
+        <div class="focus-callout-body">
+          <p class="focus-callout-eyebrow">Home of the 3-Hour Focus Clean</p>
+          <h2>Just need the rooms that matter? Book the Focus Clean.</h2>
+          <p>One cleaner, three focused hours, a flat $150 &mdash; you pick the three or four areas that need it most. No square-footage quote, no in-home estimate.</p>
+          <a href="/services/focus-clean" class="btn btn-primary">See how the Focus Clean works</a>
+        </div>
       </div>
     </div>
   </section>
@@ -510,6 +590,7 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
+          <li><a href="/services/focus-clean">Focus Clean</a></li>
           <li><a href="/services/residential-cleaning">Residential</a></li>
           <li><a href="/services/deep-cleaning">Deep Cleaning</a></li>
           <li><a href="/services/move-in-move-out-cleaning">Move-In / Out</a></li>
@@ -551,6 +632,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=20260520" defer></script>
+<script src="/js/main.js?v=20260615" defer></script>
 </body>
 </html>

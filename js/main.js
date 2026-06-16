@@ -98,3 +98,17 @@
     });
   });
 })();
+
+/* Focus Clean announcement bar — dismiss + remember */
+(function () {
+  var bar = document.getElementById('announce-bar');
+  if (!bar) return;
+  try { if (localStorage.getItem('spotlessAnnounceDismissed') === '1') bar.classList.add('is-dismissed'); } catch (e) {}
+  var btn = bar.querySelector('.announce-bar-close');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      bar.classList.add('is-dismissed');
+      try { localStorage.setItem('spotlessAnnounceDismissed', '1'); } catch (e) {}
+    });
+  }
+})();
