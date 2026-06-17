@@ -97,3 +97,24 @@ crew-at-work / action shots — worth capturing next.
 **Pre-existing (not introduced here):** 7 pages reference `/images/og-default.png`,
 which doesn't exist. Their social-share cards have no image until a 1200×630
 `og-default.png` is added.
+
+---
+
+## Aspect-ratio fix (Lighthouse "incorrect aspect ratio")
+
+The Dash mascot (`dash-mascot-transparent.png`) was a 2068×1214 canvas that was mostly
+empty transparent padding around an ~880px, essentially-square badge. Displayed as a
+square seal across the site, that 1.70 ratio was being squished — the source of the
+Lighthouse flag.
+
+- Trimmed the mascot to a true 880×880 square as **`dash-seal.png`** and repointed all
+  36 pages to it (new filename = clean past the 1-year image cache). Old file left in
+  place to avoid 404s during the cache transition.
+- Fixed 3 unrelated mismatches found in the same audit: `kitchen-wide-island-after`
+  was mislabeled landscape on `services/focus-clean.html` (it's portrait); and
+  `kitchen-sink-recurring-after` was given portrait dimensions on `the-grand` and
+  `el-mirage` (it's landscape).
+- Full re-scan of every `<img>` on the site: zero aspect-ratio mismatches remaining.
+
+No CSS/JS change, so cache-bust stays `?v=20260615`. Favicon (`dash-mascot.png`) is
+unchanged — it isn't part of this audit; squaring it for tab-icon polish is optional.
