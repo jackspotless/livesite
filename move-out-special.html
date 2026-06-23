@@ -73,30 +73,6 @@
     .lp-referral-band .container { flex-direction: column; text-align: center; }
   }
 
-  /* What's included checklist */
-  .lp-checks { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: grid; gap: var(--space-2); }
-  .lp-checks li { position: relative; padding-left: 1.9rem; color: var(--color-indigo-soft); line-height: 1.5; }
-  .lp-checks li::before {
-    content: ""; position: absolute; left: 0; top: .15rem; width: 1.15rem; height: 1.15rem;
-    border-radius: 50%; background: var(--color-lavender-pale);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%232D294E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: center;
-  }
-
-  /* Trust grid */
-  .lp-trust-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: var(--space-3); margin-top: var(--space-5);
-  }
-  .lp-trust-card {
-    background: var(--color-white); border: 1px solid var(--color-rule);
-    border-radius: var(--radius); padding: var(--space-4) var(--space-3);
-    text-align: center;
-  }
-  .lp-trust-card svg { display: block; margin: 0 auto var(--space-2); color: var(--color-lavender); }
-  .lp-trust-card strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: .95rem; color: var(--color-indigo); margin-bottom: .25rem; }
-  .lp-trust-card span { font-size: .875rem; color: var(--color-indigo-soft); }
-
   /* Booking embed */
   .booking-frame {
     width: 100%; min-height: 1000px; border: 0; background: var(--color-white);
@@ -104,18 +80,7 @@
   }
   @media (max-width: 720px) { .booking-frame { min-height: 1400px; } }
 
-  /* Sticky mobile CTA bar */
-  .lp-sticky-cta {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
-    display: none; gap: .6rem; padding: .6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
-    background: rgba(255,255,255,.96); backdrop-filter: blur(8px);
-    border-top: 1px solid var(--color-rule); box-shadow: 0 -6px 24px -12px rgba(45,41,78,.25);
-  }
-  .lp-sticky-cta .btn { flex: 1; padding-top: .85rem; padding-bottom: .85rem; }
-  @media (max-width: 720px) {
-    .lp-sticky-cta { display: flex; }
-    body { padding-bottom: 5rem; }
-  }
+
 
   /* Exit-intent modal (desktop) */
   .lp-exit-overlay {
@@ -218,92 +183,6 @@
       <div class="trust-item">Appliances, bathrooms, floors</div>
       <div class="trust-item">Photo documentation sent after</div>
       <div class="trust-item">Insured &amp; bonded</div>
-    </div>
-  </section>
-
-  <!-- PHOTOS -->
-  <section class="section" style="padding-top:var(--space-6); padding-bottom:var(--space-4)">
-    <div class="container">
-      <p class="section-eyebrow has-dot">Real move-out results</p>
-      <h2 class="section-heading" style="margin-bottom:var(--space-5)">This is what handover-ready looks like.</h2>
-      <div class="spotless-photo-strip">
-        <picture>
-          <source srcset="/images/kitchen-wide-island-after.webp" type="image/webp">
-          <img src="/images/kitchen-wide-island-after.jpg" alt="Kitchen cleaned to move-out standard" width="960" height="1280" loading="lazy" decoding="async">
-        </picture>
-        <picture>
-          <source srcset="/images/bathroom-vanity-after.webp" type="image/webp">
-          <img src="/images/bathroom-vanity-after.jpg" alt="Bathroom vanity cleaned for move-out inspection" width="960" height="1280" loading="lazy" decoding="async">
-        </picture>
-        <picture>
-          <source srcset="/images/kitchen-fridge-exterior-after.webp" type="image/webp">
-          <img src="/images/kitchen-fridge-exterior-after.jpg" alt="Refrigerator exterior cleaned for move-out" width="960" height="1280" loading="lazy" decoding="async">
-        </picture>
-      </div>
-      <div class="spotless-ba" style="margin-top:var(--space-5)">
-        <figure data-label="Before">
-          <picture>
-            <source srcset="/images/kitchen-sink-before.webp" type="image/webp">
-            <img src="/images/kitchen-sink-before.jpg" alt="Kitchen sink before move-out clean" width="960" height="1280" loading="lazy" decoding="async">
-          </picture>
-        </figure>
-        <figure class="is-after" data-label="After">
-          <picture>
-            <source srcset="/images/kitchen-sink-after.webp" type="image/webp">
-            <img src="/images/kitchen-sink-after.jpg" alt="The same kitchen sink spotless after move-out clean" width="960" height="1280" loading="lazy" decoding="async">
-          </picture>
-        </figure>
-      </div>
-      <p class="spotless-ba-caption">Same kitchen. Same day.</p>
-    </div>
-  </section>
-
-  <!-- WHAT'S INCLUDED -->
-  <section class="section" style="padding-top:var(--space-4)">
-    <div class="container">
-      <p class="section-eyebrow has-dot">What's included</p>
-      <h2 class="section-heading">Everything on the move-out checklist.</h2>
-      <div class="prose">
-        <p>A move-out clean covers the whole unit — not just the surfaces. We clean the things that actually get flagged on an inspection, so you're not left negotiating over a dirty oven or grimy baseboards.</p>
-      </div>
-      <ul class="lp-checks">
-        <li><strong>Kitchen</strong> — inside oven, microwave, and refrigerator; stovetop, hood, counters, sink, and cabinet exteriors.</li>
-        <li><strong>Bathrooms</strong> — toilet, tub, shower, vanity, mirrors, tile, and fixtures throughout.</li>
-        <li><strong>Floors</strong> — vacuumed and mopped in every room.</li>
-        <li><strong>Throughout the unit</strong> — baseboards, windowsills, blinds, light switches, and door frames.</li>
-        <li><strong>Photo documentation</strong> — we send you photos after the clean so you have a record for your move-out inspection.</li>
-        <li><strong>Supplies included</strong> — we bring everything. You don't need to leave anything behind.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- TRUST CARDS -->
-  <section class="section" style="background:var(--color-cream-warm)">
-    <div class="container">
-      <p class="section-eyebrow has-dot">Why tenants choose Spotless</p>
-      <h2 class="section-heading">We've done this before. A lot.</h2>
-      <div class="lp-trust-grid">
-        <div class="lp-trust-card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <strong>Insured &amp; bonded</strong>
-          <span>You're covered if anything goes wrong. It rarely does.</span>
-        </div>
-        <div class="lp-trust-card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <strong>Local &amp; family-owned</strong>
-          <span>Based in Surprise. We serve the West Valley — this is our neighborhood too.</span>
-        </div>
-        <div class="lp-trust-card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <strong>Photo documentation</strong>
-          <span>We send photos after every move-out clean. Your record, your peace of mind.</span>
-        </div>
-        <div class="lp-trust-card">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <strong>Open 7 days</strong>
-          <span>Monday through Sunday, 8 AM to 6 PM. Move-out timing is rarely convenient — we work around it.</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -452,11 +331,7 @@
   </div>
 </div>
 
-<!-- Sticky mobile CTA bar -->
-<div class="lp-sticky-cta" aria-hidden="false">
-  <a href="#book" class="btn btn-primary">Book — 20% off</a>
-  <a href="tel:+16233214966" class="btn btn-secondary">Call</a>
-</div>
+
 
 <script>
 (function () {
