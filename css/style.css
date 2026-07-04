@@ -421,6 +421,139 @@ ul, ol { padding-left: 1.25rem; }
   max-width: 11ch;
 }
 
+/* ---------- Homepage hero lead-capture card ---------- */
+/* Scoped to .hero-inner--with-form only — does not affect the
+   focus-clean / move-out-special landing-page heroes (lp-hero). */
+.hero-inner--with-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
+  gap: var(--space-7);
+  align-items: start;
+}
+.hero-inner--with-form .hero-content {
+  min-width: 0;
+}
+
+.hero-lead-card {
+  position: relative;
+  z-index: 2;
+  background: var(--color-white);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 36px -12px rgba(45, 41, 78, 0.18);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+}
+.hero-lead-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.hero-lead-mark {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.hero-lead-card h2 {
+  font-size: 1.1875rem;
+  margin: 0 0 0.15em;
+}
+.hero-lead-card-lede {
+  font-size: 0.875rem;
+  color: var(--color-indigo-soft);
+  margin: 0;
+}
+.hero-lead-honeypot {
+  position: absolute;
+  left: -9999px;
+}
+.hero-lead-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.hero-lead-field--full {
+  grid-column: 1 / -1;
+}
+.hero-lead-field {
+  margin-bottom: 0;
+}
+.hero-lead-field label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-indigo);
+  margin-bottom: var(--space-1);
+}
+.hero-lead-optional {
+  font-weight: 400;
+  color: var(--color-indigo-soft);
+  text-transform: none;
+  letter-spacing: normal;
+}
+.hero-lead-field input,
+.hero-lead-field select,
+.hero-lead-field textarea {
+  width: 100%;
+  padding: 0.7rem var(--space-3);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--color-indigo);
+  background: var(--color-cream);
+  transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease), background 160ms var(--ease);
+}
+.hero-lead-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234A4570' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: var(--space-6);
+}
+.hero-lead-field textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+  line-height: 1.5;
+}
+.hero-lead-field input:focus,
+.hero-lead-field select:focus,
+.hero-lead-field textarea:focus {
+  outline: none;
+  border-color: var(--color-lavender);
+  box-shadow: 0 0 0 3px var(--color-lavender-pale);
+  background: var(--color-white);
+}
+.hero-lead-submit {
+  display: flex;
+  width: 100%;
+  margin-top: var(--space-2);
+}
+.hero-lead-fineprint {
+  margin: var(--space-3) 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-indigo-soft);
+  text-align: center;
+}
+.hero-lead-fineprint a {
+  color: var(--color-indigo);
+}
+
+@media (max-width: 1024px) {
+  .hero-inner--with-form {
+    grid-template-columns: 1fr;
+  }
+  .hero-lead-card {
+    max-width: 420px;
+  }
+}
+@media (max-width: 860px) {
+  .hero-lead-card {
+    max-width: none;
+  }
+}
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;

@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/css/style.css?v=20260623">
+<link rel="stylesheet" href="/css/style.css?v=20260703">
 
 <!-- JSON-LD: HouseCleaningService -->
 <script type="application/ld+json">
@@ -205,21 +205,84 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-inner">
-      <p class="hero-eyebrow has-dot">Surprise, AZ · West Valley</p>
-      <h1>A spotless home, every visit. That's the deal.</h1>
-      <p class="hero-lede">House cleaning across the West Valley — with pricing you can see before you book, and the same trusted crew every time you have us out.</p>
-      <div class="hero-actions">
-        <a href="/booking" class="btn btn-primary">Get Instant Quote</a>
-        <a href="tel:+16233214966" class="btn btn-secondary">Call (623) 321-4966</a>
+    <div class="hero-inner hero-inner--with-form">
+      <div class="hero-content">
+        <p class="hero-eyebrow has-dot">Surprise, AZ · West Valley</p>
+        <h1>A spotless home, every visit. That's the deal.</h1>
+        <p class="hero-lede">House cleaning across the West Valley — with pricing you can see before you book, and the same trusted crew every time you have us out.</p>
+        <div class="hero-actions">
+          <a href="/booking" class="btn btn-primary">Get Instant Quote</a>
+          <a href="tel:+16233214966" class="btn btn-secondary">Call (623) 321-4966</a>
+        </div>
+        <p class="hero-meta">
+          <span>Insured &amp; bonded</span>
+          <span>Family-owned</span>
+          <span>Open 7 days a week</span>
+        </p>
       </div>
-      <p class="hero-meta">
-        <span>Insured &amp; bonded</span>
-        <span>Family-owned</span>
-        <span>Open 7 days a week</span>
-      </p>
+
+      <div class="hero-lead-card">
+        <div class="hero-lead-card-head">
+          <img src="/images/dash-seal.png" alt="" class="hero-lead-mark" aria-hidden="true">
+          <div>
+            <h2>Not ready to book yet?</h2>
+            <p class="hero-lead-card-lede">We'll follow up — usually the same day.</p>
+          </div>
+        </div>
+
+        <form name="homepage-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" class="hero-lead-form">
+          <input type="hidden" name="form-name" value="homepage-lead">
+          <input type="hidden" name="source" value="Homepage hero">
+          <p class="hero-lead-honeypot">
+            <label>Don't fill this out: <input name="bot-field"></label>
+          </p>
+
+          <div class="hero-lead-field">
+            <label for="hero-lead-name">Full name</label>
+            <input type="text" id="hero-lead-name" name="name" required>
+          </div>
+
+          <div class="hero-lead-field">
+            <label for="hero-lead-phone">Phone</label>
+            <input type="tel" id="hero-lead-phone" name="phone" required>
+          </div>
+
+          <div class="hero-lead-field">
+            <label for="hero-lead-email">Email</label>
+            <input type="email" id="hero-lead-email" name="email" required>
+          </div>
+
+          <div class="hero-lead-field">
+            <label for="hero-lead-city">City</label>
+            <select id="hero-lead-city" name="city" required>
+              <option value="">Select your city</option>
+              <option value="Surprise">Surprise</option>
+              <option value="Peoria">Peoria</option>
+              <option value="Goodyear">Goodyear</option>
+              <option value="Litchfield Park">Litchfield Park</option>
+              <option value="Glendale">Glendale</option>
+              <option value="Buckeye">Buckeye</option>
+              <option value="Verrado">Verrado</option>
+              <option value="Avondale">Avondale</option>
+              <option value="Waddell">Waddell</option>
+              <option value="El Mirage">El Mirage</option>
+              <option value="Sun City">Sun City</option>
+              <option value="Sun City West">Sun City West</option>
+              <option value="Other">Other / not sure</option>
+            </select>
+          </div>
+
+          <div class="hero-lead-field hero-lead-field--full">
+            <label for="hero-lead-message">What do you need? <span class="hero-lead-optional">(optional)</span></label>
+            <textarea id="hero-lead-message" name="message" rows="2" placeholder="Tell us about your home, timing, anything we should know."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary hero-lead-submit hero-lead-field--full">Request a Callback</button>
+        </form>
+
+        <p class="hero-lead-fineprint">Prefer to see pricing right now? <a href="/booking">Get an instant quote</a> instead.</p>
+      </div>
     </div>
-    <img src="/images/dash-seal.png" alt="" class="hero-seal" aria-hidden="true">
   </section>
 
   <!-- Trust strip -->
