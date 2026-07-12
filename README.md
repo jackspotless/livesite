@@ -1,191 +1,109 @@
-# Spotless House Cleaning — Website
+# Service scope accuracy fix — July 2026
 
-Static HTML/CSS website for **Spotless House Cleaning**, family-owned in Surprise, AZ.
+Cross-checked all three cleaning-tier pages against your three cleaner checklists
+(Standard Clean / 12 tasks, Deep Clean / 21 tasks, Move-In/Move-Out / 30 tasks) and
+fixed everywhere the site's copy didn't match.
 
-**Production URL:** https://spotlesshousecleaningaz.com
-**Phone:** (623) 321-4966
-**Email:** support@spotlesshousecleaningaz.com
+## The core problem
 
----
+The Deep Cleaning page's "What's included" list — and several other pages that
+echoed the same phrase — claimed things that are actually Move-In/Move-Out
+exclusives: inside the oven, inside the refrigerator, interior window panes/sills,
+inside vanity/under-sink cabinets, and closet drawer interiors. The site was also
+internally inconsistent about it — one paragraph called those items "included,"
+another called them "add-ons," and a third implied even Deep Clean itself doesn't
+include them and you need to book Deep Clean to get them (which wasn't true either).
 
-## What's in this repo
+Per your direction: **each tier's included scope is exactly its checklist.**
+Anything from a higher checklist is available as an itemized, separately-priced
+add-on on a lower tier — never bundled in for free.
+
+## Files changed (7)
+
+### `services/deep-cleaning.html`
+- Rewrote "What's included" to match the 21-task Deep Clean checklist exactly.
+  Removed: inside oven, inside refrigerator, window sills/tracks/interior windows,
+  under-sink cabinet, closet floors, dresser/desk drawers — none of these are on
+  the Deep Clean checklist.
+- Added a new "Available add-ons" note explaining those items can be added
+  individually, priced separately, pointing to the Move-In/Move-Out page.
+- Fixed the intro paragraph, meta description, JSON-LD `description`, page lede,
+  and the "How is deep cleaning different" FAQ (both visible copy and JSON-LD) —
+  all previously said "inside appliances" as if oven/fridge were included.
+- Updated the pricing paragraph's add-on list to include "inside the oven"
+  alongside the fridge/windows/garage add-ons already mentioned there.
+
+### `services/residential-cleaning.html`
+- Fixed "What's not in the price" paragraph — previously implied booking Deep
+  Cleaning gets you oven/fridge/windows. Now correctly separates "full-home
+  baseboards/vents/fans = Deep Cleaning's scope" from "oven/fridge/windows =
+  itemized add-ons available on any tier."
+- Fixed the "standard vs. deep" FAQ (visible + JSON-LD) to match.
+
+### `services/move-in-move-out-cleaning.html`
+- Made the medicine cabinet its own line item under Bathrooms (checklist calls
+  it out separately; page previously folded it into a generic "cabinets and
+  drawers" line).
+- Fixed the "Do you clean inside the refrigerator and oven?" FAQ (visible +
+  JSON-LD) — previously said those are "deep-clean add-ons" for occupied homes.
+  Corrected to say they're add-ons available on any service, not specific to
+  booking a deep clean.
+
+### `services/index.html` and `index.html` (homepage)
+- Fixed the Deep Cleaning teaser card copy on both — same "inside appliances"
+  overstatement, one-line fix on each.
+
+### `blog/deep-cleaning-vs-standard-cleaning-surprise-az.html`
+- This post had the exact same overstated Deep Clean breakdown as the old
+  service page (oven, fridge, windows, under-sink cabinet all listed as
+  included). Rewrote the "What deep cleaning adds" section to match the
+  corrected checklist, fixed the TLDR callout, the transitional paragraph
+  before it, and a photo caption that said "Inside appliances" over a photo
+  that's actually just a microwave.
+
+### `blog/what-house-cleaners-charge-west-valley.html`
+- Fixed the Deep Clean row of the pricing comparison table — same overstatement,
+  now notes oven/fridge as separate add-ons.
+
+## What did NOT need changes
+
+- `services/recurring-residential-cleaning.html` — already matched the Standard
+  Clean checklist cleanly.
+- `services/move-in-move-out-cleaning.html`'s main included list — already
+  correctly scoped to the 30-task checklist (this was the one page getting it
+  right already).
+- `blog/move-in-cleaning-checklist-west-valley.html` — mentions of "inside
+  appliances" there are accurate since it's specifically about move-in cleaning.
+
+## Not touched — flagging for you
+
+Short-Term Rental and Focus Clean pages weren't checked against a cleaner
+checklist since you didn't provide one for those tiers. If you have (or want to
+build) a checklist for either, send it over and I'll run the same pass.
+
+## Deploy notes
+
+All 7 changes are content-only — no CSS/JS touched, so no cache-bust version bump
+needed. Drop these files into the matching paths in your repo and push:
 
 ```
-spotless-house-cleaning/
-├── index.html                 # Homepage
-├── about.html                 # About / family story
-├── contact.html               # Contact + form (Netlify)
-├── booking.html               # Booking Koala iframe
-├── thank-you.html             # Form submission landing
-├── 404.html                   # Page not found
-├── privacy.html               # Privacy policy
-├── terms.html                 # Terms of service
-├── robots.txt                 # Search engine directives
-├── sitemap.xml                # XML sitemap (24 URLs)
-├── netlify.toml               # Netlify deployment config
-├── README.md                  # This file
-│
-├── css/
-│   └── style.css              # Global stylesheet
-├── js/
-│   └── main.js                # Mobile nav toggle
-├── images/                    # Logos and brand assets
-│
-├── services/
-│   ├── index.html
-│   ├── residential-cleaning.html
-│   ├── deep-cleaning.html
-│   ├── move-in-move-out-cleaning.html
-│   ├── short-term-rental-cleaning.html
-│   └── recurring-residential-cleaning.html
-│
-├── service-areas/
-│   ├── index.html
-│   ├── surprise.html
-│   ├── peoria.html
-│   ├── goodyear.html
-│   ├── litchfield-park.html
-│   ├── glendale.html
-│   ├── buckeye.html
-│   ├── verrado.html
-│   ├── avondale.html
-│   ├── waddell.html
-│   └── el-mirage.html
-│
-└── blog/
-    ├── index.html
-    └── deep-cleaning-vs-standard-cleaning-surprise-az.html
+index.html
+services/index.html
+services/deep-cleaning.html
+services/residential-cleaning.html
+services/move-in-move-out-cleaning.html
+blog/deep-cleaning-vs-standard-cleaning-surprise-az.html
+blog/what-house-cleaners-charge-west-valley.html
 ```
 
-**Total:** 24 pages of content. ~30,000 words.
+All JSON-LD blocks validated as parseable JSON after edits. Every FAQ answer that
+was corrected in visible copy was also corrected in its matching JSON-LD entry
+so they stay in sync (per QA checklist — schema must match visible content).
 
----
+## Suggested QA after deploy
 
-## Tech stack
-
-- **Pure static HTML/CSS/JS** — no build step, no framework, no dependencies.
-- **Netlify-ready** — deploy by connecting the GitHub repo to Netlify and pointing it at the root.
-- **Booking Koala iframe** — the booking form is embedded on `/booking.html`. Nothing special needed.
-- **Netlify Forms** — the contact form on `/contact.html` uses Netlify's built-in form handling. Form submissions arrive in the Netlify dashboard and (optionally) by email.
-
----
-
-## Local development
-
-This is a static site. Any local web server works:
-
-```bash
-# Python 3
-python3 -m http.server 8000
-
-# Or Node
-npx http-server -p 8000
-```
-
-Then open http://localhost:8000.
-
-To make changes: edit the HTML files directly. There's no build step.
-
----
-
-## Deploying to Netlify
-
-1. Push this repo to GitHub.
-2. In Netlify: **Add new site → Import existing project → GitHub → select repo.**
-3. Build settings: leave blank (no build command). Publish directory: `.`
-4. Click Deploy.
-5. Set up the custom domain in **Domain settings → Add custom domain** → `spotlesshousecleaningaz.com`. Netlify will guide DNS setup.
-6. SSL is automatic (Let's Encrypt).
-7. **Enable form notifications:** Site settings → Forms → Form notifications → Add notification → Email → enter `support@spotlesshousecleaningaz.com`.
-
-The `netlify.toml` file in the root handles redirects, headers, and caching.
-
----
-
-## Things to review before launch
-
-A few things were filled in with reasonable defaults but **need owner review**:
-
-### 1. Privacy Policy & Terms of Service — VERBATIM from live source (do not modify)
-`privacy.html` and `terms.html` contain the live verbatim legal text. **Do not modify the legal content** — these are tied to third-party tools (Stripe, Google Analytics, Google Ads, Twitter, Facebook for privacy; subscription/payment processors for terms) and changes could break those integrations' compliance. Only the wrapper template (header, footer, fonts) is templated; every word of the legal text is preserved from the source.
-
-Three placeholder tokens in the original Terms source (`COMPANY`, `STATE`, `Phone Number`) were filled in with the correct values per Jack's confirmation: "Spotless House Cleaning LLC" (3 instances), "Arizona" (1 instance), and "(623) 321-4966" (2 instances). If Jack wants to update the live legal pages elsewhere with the same fixes, that's a separate decision he should make about his master legal documents.
-
-### 2. Service area boundaries
-The site lists 10 cities. If the actual service area changes (you add or drop cities), update these places:
-- Footer "Service Areas" links in every HTML file
-- Homepage `index.html` city pills section
-- `service-areas/index.html` card grid
-- `sitemap.xml`
-- The areaServed JSON-LD on each city page
-- The interlink blocks at the bottom of each service page
-
-### 3. Pricing language
-The pages reference "10-20% recurring discount" as a typical range. **If you have specific pricing tiers, replace these with your actual numbers.** Search for "10-20%" across the codebase.
-
-### 4. Social profiles in homepage JSON-LD
-The homepage's `HouseCleaningService` schema lists Instagram and Google Maps URLs in `sameAs`. **Verify these are correct** and add other social profiles (Facebook, Yelp, etc.) as you set them up.
-
-### 5. OG image
-Pages reference `/images/og-default.png` as the default Open Graph image — but this file doesn't yet exist. **Create a 1200×630px social-share image** featuring the wordmark on the cream background and place it at `images/og-default.png`. Without this, social shares will show no image.
-
-### 6. Content updates
-A few things will need updating after launch:
-- **Reviews:** Once you have Google Business Profile reviews, consider adding a testimonials section to the homepage and an `aggregateRating` schema property.
-- **Founding date:** All pages list `2026` as the founding year. Adjust if this changes.
-- **Blog cadence:** Plan to publish 1-2 posts per quarter at minimum to keep the blog from looking abandoned.
-
----
-
-## Brand guidelines (quick reference)
-
-**Colors:**
-- Deep Indigo `#2D294E` — primary text, dark sections
-- Lavender Mist `#B19CD9` — accents, highlights
-- Crisp Cream `#FAF9F6` — main background
-
-**Fonts:**
-- Display: **Archivo** (headings)
-- Body: **Inter** (paragraphs, UI)
-
-**Logo usage:**
-- Header navigation: wordmark only (no mascot)
-- Hero: Dash mascot as a quality seal
-- Footer: full lockup
-
----
-
-## Schema / SEO notes
-
-- Every page has appropriate JSON-LD: `HouseCleaningService` (homepage), `Service` (service pages), `BreadcrumbList` (every page), `FAQPage` (most pages).
-- The business identity is anchored at `https://spotlesshousecleaningaz.com/#business` — city pages reference this via `parentOrganization`.
-- Sitemap lists all 24 pages with appropriate priorities.
-- `robots.txt` allows full crawling and points to the sitemap.
-- All canonical URLs are set.
-- Open Graph and Twitter Cards configured on every page.
-
----
-
-## Analytics & Search Console
-
-**Google Analytics 4** is installed on every page using the gtag.js snippet (Measurement ID `G-1NSKQJZ5V5`). The snippet sits in `<head>` and loads asynchronously, so it doesn't block page render. Data flows to Jack's GA4 property automatically.
-
-**Google Search Console** should be verified on Jack's Google account. The recommended verification method is "Google Analytics" — since GA4 is already installed, GSC will detect it automatically and verify ownership in one click. Alternatively, GSC supports HTML meta tag, DNS TXT record, or HTML file upload as fallback methods.
-
-After GSC is verified, submit `sitemap.xml` so Google starts crawling all 24 URLs.
-
-Both tools are owned by Jack on his Google account. Baseline is added as a user with appropriate permissions (Editor for GA4, Restricted for GSC) — never as the primary account holder.
-
----
-
-## Built by Baseline SEO
-
-Every page footer includes a small "Created by Baseline SEO" attribution linking to baseline-seo.com. This is standard on all Baseline builds.
-
----
-
-## Questions / changes
-
-Questions about the build or changes you'd like made: email or text the developer (you know who you are).
-
-For ongoing edits, the simplest workflow is to make changes directly in GitHub (web editor) — Netlify will auto-deploy on commit.
+- Re-run Google's Rich Results Test on `deep-cleaning`, `residential-cleaning`,
+  and `move-in-move-out-cleaning` to confirm FAQPage schema still validates.
+- Spot-check the Deep Cleaning page's new "Available add-ons" copy reads the
+  way you want — I wrote it generically ("note what you'd like added when you
+  book and we'll quote it") since I don't have your actual add-on price list.
