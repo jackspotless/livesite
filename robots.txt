@@ -1,5 +1,44 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# --- AI crawlers: explicit rules (Aug 2026) ---
+# Intent: stay visible/citable in AI-generated answers (works like local search
+# visibility) while opting out of having site content used as model training data.
+# Note: robots.txt is voluntary compliance, not enforcement — crawlers can ignore it.
+
+# Training-focused crawlers — opt out
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# Live-query / answer-engine crawlers — allow (these are what let AI assistants
+# cite or reference the site when someone asks about house cleaning nearby)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# --- Content Signals (Cloudflare proposal, Sept 2025) ---
+# Not currently honored by any known crawler or LLM (Google confirmed non-adoption,
+# July 2026) — included as a declared-intent statement, costs nothing to have.
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
 Sitemap: https://spotlesshousecleaningaz.com/sitemap.xml
