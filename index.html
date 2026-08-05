@@ -208,7 +208,7 @@
     <div class="hero-inner hero-inner--with-form">
       <div class="hero-content">
         <p class="hero-eyebrow has-dot">Surprise, AZ · West Valley</p>
-        <h1>A spotless home, every visit. That's the deal.</h1>
+        <h1>House Cleaning in Surprise, AZ — A Spotless Home, Every Visit</h1>
         <p class="hero-lede">House cleaning across the West Valley — with pricing you can see before you book, and the same trusted crew every time you have us out.</p>
         <div class="hero-actions">
           <a href="/booking" class="btn btn-primary">Get Instant Quote</a>
@@ -296,6 +296,64 @@
   </section>
 
   <!-- Focus Clean signature band -->
+
+  <!-- === paige-reviews-widget:start === -->
+  <section class="section" style="padding-top: var(--space-6); padding-bottom: var(--space-6);">
+    <div class="container" style="max-width: 900px;">
+      <div style="text-align: center; margin-bottom: var(--space-4);">
+        <p class="section-eyebrow has-dot" style="justify-content: center;">What people are saying</p>
+      </div>
+      <div id="reviewsWidgetContainer">
+        <iframe
+          id="reviewsWidget"
+          style="width: 100%; border: none; min-height: 300px;"
+          title="Reviews Widget"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function() {
+      function getPageSizeForWidth(width) {
+        if (width < 450) return 1;
+        if (width < 675) return 2;
+        if (width < 918) return 3;
+        if (width < 1144) return 4;
+        return 5;
+      }
+      function setIframeSrc() {
+        const iframe = document.getElementById("reviewsWidget");
+        const container = document.getElementById("reviewsWidgetContainer");
+        if (!iframe || !container) {
+          setTimeout(setIframeSrc, 50);
+          return;
+        }
+        const width = container.offsetWidth;
+        if (width === 0) {
+          setTimeout(setIframeSrc, 50);
+          return;
+        }
+        const pageSize = getPageSizeForWidth(width);
+        const expectedSrc = "https://www.localmarketingmanager.com/api/reviews/spotless-house-cleaning-review-widget?pageSize=" + pageSize;
+        if (iframe.src !== expectedSrc) {
+          iframe.src = expectedSrc;
+        }
+      }
+      function init() {
+        setIframeSrc();
+        setTimeout(setIframeSrc, 50);
+        window.addEventListener("resize", setIframeSrc);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+  <!-- === paige-reviews-widget:end === -->
+
   <section class="focus-hero-band">
     <div class="container focus-hero-band-inner">
       <div class="focus-hero-band-text">
@@ -385,6 +443,23 @@
     </div>
   </section>
 
+
+  <!-- === paige-image-widget:start === -->
+  <section class="section" style="padding-top: var(--space-5); padding-bottom: var(--space-6);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-5);">
+        <span class="spotless-gallery-eyebrow">Always current</span>
+        <h2 class="spotless-gallery-title" style="font-size: 1.625rem; max-width: 32ch; margin-left: auto; margin-right: auto;">Fresh from our Google Business Profile</h2>
+      </div>
+      <iframe
+        src="https://www.localmarketingmanager.com/api/images/spotless-house-cleaning-image-widget"
+        style="width: 100%; border: none; min-height: 480px;"
+        title="Images Widget"
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+  <!-- === paige-image-widget:end === -->
   <section class="section" style="padding-top:0">
     <div class="container">
       <p class="section-eyebrow has-dot">Where we clean</p>
@@ -474,6 +549,23 @@
       </div>
     </div>
   </section>
+
+  <!-- === paige-posts-widget:start === -->
+  <section class="section" style="padding-top: var(--space-5); padding-bottom: var(--space-6);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-5);">
+        <span class="spotless-gallery-eyebrow">Recent updates</span>
+        <h2 class="spotless-gallery-title" style="font-size: 1.625rem; max-width: 32ch; margin-left: auto; margin-right: auto;">Latest from our Google Business Profile</h2>
+      </div>
+      <iframe
+        src="https://www.localmarketingmanager.com/api/local-posts/spotless-house-cleaning-local-posts-widget"
+        style="width: 100%; min-height: 480px; border: none;"
+        title="Local Posts Widget"
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+  <!-- === paige-posts-widget:end === -->
 
   <!-- Final CTA -->
   <section class="final-cta">

@@ -4,6 +4,17 @@
 [build]
   publish = "."
 
+# ---------- Canonical host ----------
+# Force www to the bare (canonical) domain. Added Aug 4, 2026 after GSC data
+# showed www.spotlesshousecleaningaz.com indexed as a separate URL from the
+# canonical spotlesshousecleaningaz.com, splitting homepage signal in two.
+
+[[redirects]]
+  from = "https://www.spotlesshousecleaningaz.com/*"
+  to = "https://spotlesshousecleaningaz.com/:splat"
+  status = 301
+  force = true
+
 # ---------- Pretty URLs ----------
 # Force-redirect any legacy .html URL to its extensionless canonical version.
 # This handles bookmarks, old sitemap entries, and any external links pointing
