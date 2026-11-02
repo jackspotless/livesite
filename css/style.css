@@ -1746,3 +1746,23 @@ ul, ol { padding-left: 1.25rem; }
   }
 }
 /* === end customer-login === */
+
+/* === nav-areas-two-col (Nov 2026) === */
+.nav-dropdown--areas { min-width: 380px; }
+.nav-dropdown-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-3); }
+.nav-dropdown-col { display: flex; flex-direction: column; gap: 2px; }
+.nav-dropdown-label {
+  display: block;
+  padding: var(--space-2) var(--space-3) var(--space-1);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-lavender);
+}
+@media (max-width: 860px) {
+  .nav-dropdown--areas { min-width: 0; }
+  .nav-dropdown-cols { grid-template-columns: 1fr; }
+  .nav-dropdown-label { padding: var(--space-2) var(--space-2) var(--space-1); }
+  .nav-item.has-dropdown.is-open > .nav-dropdown--areas { max-height: 1200px; }
+}
